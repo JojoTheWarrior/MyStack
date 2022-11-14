@@ -18,8 +18,48 @@ int[] arr – array instance variable to store the data
  */
 
 import java.io.*;
+import java.util.function.Supplier;
 
-public class MyStack{
+public class MyStack {
+    public static int capacity;
+    private int[] arr;
+
+    public MyStack(int capacity)
+    {
+        this.capacity = capacity;
+        arr = new int[capacity];
+    }
+
+    public boolean push(int element)
+    {
+        return true;
+    }
+
+    public int pop()
+    {
+        return 0;
+    }
+
+    public int peek()
+    {
+        return 0;
+    }
+
+    public int size()
+    {
+        return 0;
+    }
+
+    public boolean isEmpty()
+    {
+        return size()==0;
+    }
+
+    public boolean isFull()
+    {
+        return size()==capacity;
+    }
+
     //main method, calls the methods on the stack
     public static void main(String[] args){
         
