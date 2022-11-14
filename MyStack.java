@@ -18,7 +18,6 @@ int[] arr – array instance variable to store the data
  */
 
 import java.io.*;
-import java.util.function.Supplier;
 
 public class MyStack {
     public static int capacity;
