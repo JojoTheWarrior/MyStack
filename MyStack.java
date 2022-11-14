@@ -64,7 +64,17 @@ public class MyStack {
 
     public void print()
     {
-        ;
+        if (this.isEmpty())
+        {
+            System.out.println("[]");
+            return;
+        }
+        System.out.print("["+this.arr[0]);
+        for (int i=1; i<size; i++)
+        {
+            System.out.print(", "+this.arr[i]);
+        }
+        System.out.println("]");
     }
 
     //main method, calls the methods on the stack
