@@ -60,6 +60,11 @@ public class MyStack {
         return size()==capacity;
     }
 
+    public void print()
+    {
+        ;
+    }
+
     //main method, calls the methods on the stack
     public static void main(String[] args){
         
