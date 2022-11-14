@@ -23,7 +23,7 @@ import java.util.function.Supplier;
 public class MyStack {
     public static int capacity;
     private int[] arr;
-    private int size;
+    public int size = 0;
 
     public MyStack(int capacity)
     {
@@ -34,23 +34,23 @@ public class MyStack {
     public boolean push(int element)
     {
         if (this.isFull()) return false;
-        
+        this.arr[size++] = element;
         return true;
     }
 
     public int pop()
     {
-        return 0;
+        return this.arr[--size];
     }
 
     public int peek()
     {
-        return 0;
+        return this.arr[size-1];
     }
 
     public int size()
     {
-        return 0;
+        return this.size;
     }
 
     public boolean isEmpty()
