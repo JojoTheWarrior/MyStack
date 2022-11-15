@@ -88,7 +88,7 @@ public class MyStack {
 
         ret += arr[0];
         for (int i = 1; i < size; i++){
-            ret += ","+arr[i];
+            ret += ", " + arr[i];
         }
         ret += "]";
 
