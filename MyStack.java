@@ -53,7 +53,7 @@ public class MyStack {
         //error trapping for in case the stack is empty
         if (isEmpty()){
             System.out.println("Error: Stack has no elements.");
-            return 0;
+            return -1;
         }
 
         //showing the stack before:
