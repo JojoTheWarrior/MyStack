@@ -33,7 +33,7 @@ public class MyStack {
     public void push(int element)
     {
         //error trapping for in case the stack is alraedy full
-        if (this.isFull()){
+        if (isFull()){
             System.out.println("Error: Stack is already at maximum capacity, could not add in new element.");
             return;
         }
@@ -42,7 +42,7 @@ public class MyStack {
         System.out.println("Stack before: " + formattedStack());
 
         //adds the element
-        this.arr[size++] = element;
+        arr[size++] = element;
         
         //showing the stack after:
         System.out.println("Stack after: " + formattedStack());
@@ -60,7 +60,7 @@ public class MyStack {
         System.out.println("Stack before: " + formattedStack());
 
         //collects the top element
-        int topElement = this.arr[--size];
+        int topElement = arr[--size];
         
         //showing the stack after:
         System.out.println("Stack after: " + formattedStack());
@@ -77,12 +77,12 @@ public class MyStack {
             return -1;
         }
 
-        return this.arr[size - 1];
+        return arr[size - 1];
     }
 
     public int size()
     {
-        return this.size;
+        return size;
     }
 
     public boolean isEmpty()
