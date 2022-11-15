@@ -65,7 +65,7 @@ public class MyStack {
 
     public void print()
     {
-        ;
+        
     }
 
     //main method, calls the methods on the stack
