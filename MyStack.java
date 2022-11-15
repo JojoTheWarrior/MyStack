@@ -17,14 +17,12 @@ capacity – instance variable (int field) to store the maximum number of elemen
 int[] arr – array instance variable to store the data
  */
 
-import java.io.*;
-
 public class MyStack {
-    public static int capacity = 1000;
-    public int[] arr = new int[capacity];
-    public int size = 0;
+    public static int capacity;
+    public static int[] arr;
+    public static int size = 0;
 
-    public void push(int element)
+    public static void push(int element)
     {
         //error trapping for in case the stack is alraedy full
         if (isFull()){
@@ -42,12 +40,12 @@ public class MyStack {
         System.out.println("Stack after: " + formattedStack());
     }
 
-    public int pop()
+    public static int pop()
     {
         //error trapping for in case the stack is empty
         if (isEmpty()){
             System.out.println("Error: Stack has no elements.");
-            return -1;
+            return 0;
         }
 
         //showing the stack before:
@@ -63,53 +61,62 @@ public class MyStack {
         return topElement;
     }
 
-    public int peek()
+    public static int peek()
     {
         //error trapping for in case the stack is empty
         if (isEmpty()){
             System.out.println("Error: Stack has no elements.");
-            return -1;
+            return 0;
         }
 
         return arr[size - 1];
     }
 
-    public int size()
+    public static int size()
     {
         return size;
     }
 
-    public boolean isEmpty()
+    public static boolean isEmpty()
     {
         return size() == 0;
     }
 
-    public boolean isFull()
+    public static boolean isFull()
     {
         return size() == capacity;
     }
 
-    public void print()
+    public static void print()
     {
         System.out.println("The current stack is: " + formattedStack());
     }
 
     //helper function that returns a formatted String of the stack, useful in push and pop functions
-    public String formattedStack(){
+    public static String formattedStack(){
         //declaring the String to return
         String ret = "[";
 
-        ret += arr[0];
-        for (int i = 1; i < size; i++){
-            ret += ","+arr[i];
+        for (int i = 0; i < size; i++){
+            if (i == size - 1){
+                //very last element, do not put another comma
+                ret += arr[i] + "]";
+            } else {
+                //does not put a comma
+                ret += arr[i] + ",";
+            }
         }
-        ret += "]";
 
         return ret;
     }
 
     //main method, calls the methods on the stack
     public static void main(String[] args){
-        
+        //initializing the stack
+        capacity = 10;
+        arr = new int[capacity];
+
+        //making changes to the stack
+        pop();
     }
 }
