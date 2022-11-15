@@ -114,12 +114,33 @@ public class MyStack {
         push(10);
         push(15);
         push(20);
+
+        if (isEmpty()){
+            System.out.println("The stack is empty.\n");
+        } else {
+            System.out.println("The stack is not empty.\n");
+        }
+
         push(25);
         System.out.println(pop());
         System.out.println(pop());
         System.out.println(pop());
         System.out.println(peek());
-        System.out.println(isFull());
-        System.out.println(isEmpty());
+        
+        if (isFull()){
+            System.out.println("The stack is full.\n");
+        } else {
+            System.out.println("The stack is not full.\n");
+        }
+
+        for (int i = 6; i <= 15; i++){
+            push(5 * i);
+        }
+
+        if (isFull()){
+            System.out.println("The stack is full.\n");
+        } else {
+            System.out.println("The stack is not full.\n");
+        }
     }
 }
