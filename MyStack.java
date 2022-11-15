@@ -77,7 +77,7 @@ public class MyStack {
 
     public static void print()
     {
-        System.out.println("The current stack is: " + formattedStack());
+        System.out.println("The current stack is: " + formattedStack() + "\n");
     }
 
     //helper function that returns a formatted String of the stack, useful in push and pop functions
@@ -86,7 +86,7 @@ public class MyStack {
         //declaring the String to return
         String ret = "[";
 
-        ret += arr[0];
+        if (size != 0) ret += arr[0];
         for (int i = 1; i < size; i++){
             ret += ", " + arr[i];
         }
@@ -122,10 +122,13 @@ public class MyStack {
         }
 
         push(25);
-        System.out.println(pop());
-        System.out.println(pop());
-        System.out.println(pop());
-        System.out.println(peek());
+        System.out.println("The top popped element is " + pop() + "\n");
+        System.out.println("The top popped element is " + pop() + "\n");
+
+        print();
+
+        System.out.println("The top popped element is " + pop() + "\n");
+        System.out.println("The top peeked element is " + peek() + "\n");
         
         if (isFull()){
             System.out.println("The stack is full.\n");
