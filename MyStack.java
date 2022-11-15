@@ -20,15 +20,9 @@ int[] arr – array instance variable to store the data
 import java.io.*;
 
 public class MyStack {
-    public static int capacity;
-    private int[] arr;
+    public static int capacity = 1000;
+    public int[] arr = new int[capacity];
     public int size = 0;
-
-    public MyStack(int _capacity)
-    {
-        capacity = _capacity;
-        arr = new int[capacity];
-    }
 
     public void push(int element)
     {
