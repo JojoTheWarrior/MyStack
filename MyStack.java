@@ -81,7 +81,8 @@ public class MyStack {
     }
 
     //helper function that returns a formatted String of the stack, useful in push and pop functions
-    public static String formattedStack(){
+    public static String formattedStack()
+    {
         //declaring the String to return
         String ret = "[";
 
