@@ -17,6 +17,8 @@ capacity – instance variable (int field) to store the maximum number of elemen
 int[] arr – array instance variable to store the data
  */
 
+import java.io.*;
+
 public class MyStack {
     public static int capacity;
     public static int[] arr;
