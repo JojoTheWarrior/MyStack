@@ -99,15 +99,11 @@ public class MyStack {
         //declaring the String to return
         String ret = "[";
 
-        for (int i = 0; i < size; i++){
-            if (i == size - 1){
-                //very last element, do not put another semicolon
-                ret += i + "]";
-            } else {
-                //does not put a semicolon
-                ret += i + ",";
-            }
+        ret += arr[0];
+        for (int i = 1; i < size; i++){
+            ret += ","+arr[i];
         }
+        ret += "]";
 
         return ret;
     }
