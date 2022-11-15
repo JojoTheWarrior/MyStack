@@ -30,21 +30,54 @@ public class MyStack {
         arr = new int[capacity];
     }
 
-    public boolean push(int element)
+    public void push(int element)
     {
-        if (this.isFull()) return false;
+        //error trapping for in case the stack is alraedy full
+        if (this.isFull()){
+            System.out.println("Error: Stack is already at maximum capacity, could not add in new element.");
+            return;
+        }
+
+        //showing the stack before:
+        System.out.println("Stack before: " + formattedStack());
+
+        //adds the element
         this.arr[size++] = element;
-        return true;
+        
+        //showing the stack after:
+        System.out.println("Stack after: " + formattedStack());
     }
 
     public int pop()
     {
-        return this.arr[--size];
+        //error trapping for in case the stack is empty
+        if (isEmpty()){
+            System.out.println("Error: Stack has no elements.");
+            return 0;
+        }
+
+        //showing the stack before:
+        System.out.println("Stack before: " + formattedStack());
+
+        //collects the top element
+        int topElement = this.arr[--size];
+        
+        //showing the stack after:
+        System.out.println("Stack after: " + formattedStack());
+
+        //returns the top element
+        return topElement;
     }
 
     public int peek()
     {
-        return this.arr[size-1];
+        //error trapping for in case the stack is empty
+        if (isEmpty()){
+            System.out.println("Error: Stack has no elements.");
+            return 0;
+        }
+
+        return this.arr[size - 1];
     }
 
     public int size()
@@ -54,17 +87,35 @@ public class MyStack {
 
     public boolean isEmpty()
     {
-        return size()==0;
+        return size() == 0;
     }
 
     public boolean isFull()
     {
-        return size()==capacity;
+        return size() == capacity;
     }
 
     public void print()
     {
-        ;
+        System.out.println("The current stack is: " + formattedStack());
+    }
+
+    //helper function that returns a formatted String of the stack, useful in push and pop functions
+    public String formattedStack(){
+        //declaring the String to return
+        String ret = "[";
+
+        for (int i = 0; i < size; i++){
+            if (i == size - 1){
+                //very last element, do not put another semicolon
+                ret += i + "]";
+            } else {
+                //does not put a semicolon
+                ret += i + ",";
+            }
+        }
+
+        return ret;
     }
 
     //main method, calls the methods on the stack
