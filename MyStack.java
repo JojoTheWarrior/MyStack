@@ -85,15 +85,11 @@ public class MyStack {
         //declaring the String to return
         String ret = "[";
 
-        for (int i = 0; i < size; i++){
-            if (i == size - 1){
-                //very last element, do not put another comma
-                ret += arr[i] + "]";
-            } else {
-                //does not put a comma
-                ret += arr[i] + ",";
-            }
+        ret += arr[0];
+        for (int i = 1; i < size; i++){
+            ret += ","+arr[1];
         }
+        ret += "]";
 
         return ret;
     }
