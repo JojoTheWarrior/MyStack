@@ -26,7 +26,7 @@ public class MyStack {
     {
         //error trapping for in case the stack is alraedy full
         if (isFull()){
-            System.out.println("Error: Stack is already at maximum capacity, could not add in new element.");
+            System.out.println("Error: Stack is already at maximum capacity, could not add in new element.\n");
             return;
         }
 
@@ -44,7 +44,7 @@ public class MyStack {
     {
         //error trapping for in case the stack is empty
         if (isEmpty()){
-            System.out.println("Error: Stack has no elements.");
+            System.out.println("Error: Stack has no elements.\n");
             return 0;
         }
 
@@ -93,7 +93,8 @@ public class MyStack {
     }
 
     //helper function that returns a formatted String of the stack, useful in push and pop functions
-    public static String formattedStack(){
+    public static String formattedStack()
+    {
         //declaring the String to return
         String ret = "[";
 
@@ -106,7 +107,6 @@ public class MyStack {
                 ret += arr[i] + ",";
             }
         }
-
         ret += "]";
 
         return ret;
