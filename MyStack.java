@@ -24,9 +24,9 @@ public class MyStack {
     private int[] arr;
     public int size = 0;
 
-    public MyStack(int capacity)
+    public MyStack(int _capacity)
     {
-        this.capacity = capacity;
+        capacity = _capacity;
         arr = new int[capacity];
     }
 
