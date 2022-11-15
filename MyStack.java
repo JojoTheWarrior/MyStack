@@ -17,8 +17,6 @@ capacity – instance variable (int field) to store the maximum number of elemen
 int[] arr – array instance variable to store the data
  */
 
-import java.io.*;
-
 public class MyStack {
     public static int capacity;
     public static int[] arr;
@@ -39,7 +37,7 @@ public class MyStack {
         arr[size++] = element;
         
         //showing the stack after:
-        System.out.println("Stack after: " + formattedStack());
+        System.out.println("Stack after: " + formattedStack() + "\n");
     }
 
     public static int pop()
@@ -57,7 +55,7 @@ public class MyStack {
         int topElement = arr[--size];
         
         //showing the stack after:
-        System.out.println("Stack after: " + formattedStack());
+        System.out.println("Stack after: " + formattedStack() + "\n");
 
         //returns the top element
         return topElement;
@@ -102,12 +100,14 @@ public class MyStack {
         for (int i = 0; i < size; i++){
             if (i == size - 1){
                 //very last element, do not put another comma
-                ret += arr[i] + "]";
+                ret += arr[i];
             } else {
                 //does not put a comma
                 ret += arr[i] + ",";
             }
         }
+
+        ret += "]";
 
         return ret;
     }
@@ -120,5 +120,23 @@ public class MyStack {
 
         //making changes to the stack
         pop();
+        
+        if (isEmpty()){
+            System.out.println("The stack is empty.\n");
+        } else {
+            System.out.println("The stack is not empty.\n");
+        }
+
+        push(5);
+        push(10);
+        push(15);
+        push(20);
+        push(25);
+        System.out.println(pop());
+        System.out.println(pop());
+        System.out.println(pop());
+        System.out.println(peek());
+        System.out.println(isFull());
+        System.out.println(isEmpty());
     }
 }
